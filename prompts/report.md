@@ -85,7 +85,6 @@ https://raw.githubusercontent.com/owlhyxxn/tech-report-daily/data/data/status.js
 
 ```
 :newspaper: **Tech Daily | {TODAY} ({요일})**
-수집 범위: {MM/DD HH:MM} ~ {MM/DD HH:MM} KST · 수집 {C}건 중 {S}건 선정 · 웹 보충 {W}건
 
 :robot_face: AI/LLM·Agent {n1}건
 :gear: Backend·Language {n2}건
@@ -95,7 +94,7 @@ https://raw.githubusercontent.com/owlhyxxn/tech-report-daily/data/data/status.js
 :microscope: Research·Benchmark {n6}건
 ```
 
-- {C}: COLLECTED 건수, {S}: 그중 리포트에 실린 건수, {W}: 실린 웹 보충 건수. PAPERS는 {C}, {S}에 넣지 않고 {n6}에만 센다.
+- {n1}~{n6}: 각 도메인에 실린 건수(웹 보충·PAPERS 포함, `(계속)` 답글까지 합친 수)
 - 비고가 있을 때만 마지막 줄 다음에 빈 줄 하나를 두고 `비고: {내용}` 한 줄을 붙인다. 여러 개면 ` · ` 로 잇는다.
 
 ### 메시지 2~7: 도메인별 (머리글의 스레드 답글, 이 순서 고정)
