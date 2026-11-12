@@ -51,6 +51,13 @@ class PostReportTest(unittest.TestCase):
             "ok": True, "header_ts": "101.000", "posted_replies": 3, "failed_replies": [], "error": None,
         })
 
+    def test_link_previews_disabled_on_every_message(self):
+        slack = FakeSlack()
+        self.post(slack, ["r1", "r2"])
+        for c in slack.calls:
+            self.assertIs(c["unfurl_links"], False)
+            self.assertIs(c["unfurl_media"], False)
+
     def test_header_retried_once_then_succeeds(self):
         slack = FakeSlack([SlackError("internal_error")])
         res = self.post(slack)

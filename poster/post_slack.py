@@ -81,10 +81,10 @@ def load_messages(path: Path) -> tuple[str, list[str]]:
     return header, replies
 
 
-def make_http_sender(token: str) -> Sender:
+def make_http_sender(token: str, url: str = API_URL) -> Sender:
     def send(payload: dict) -> str:
         req = urllib.request.Request(
-            API_URL,
+            url,
             data=json.dumps(payload).encode("utf-8"),
             headers={
                 "Authorization": f"Bearer {token}",
@@ -127,14 +127,15 @@ def post_report(
     sleep: Sleeper = time.sleep,
 ) -> PostResult:
     result = PostResult()
+    base = {"channel": channel, "unfurl_links": False, "unfurl_media": False}
     try:
-        result.header_ts = send_with_retry(send, {"channel": channel, "markdown_text": header}, sleep)
+        result.header_ts = send_with_retry(send, {**base, "markdown_text": header}, sleep)
     except (RateLimited, SlackError, OSError) as exc:
         result.error = f"header: {type(exc).__name__}: {exc}"[:300]
         return result
 
     for i, text in enumerate(replies):
-        payload = {"channel": channel, "markdown_text": text, "thread_ts": result.header_ts}
+        payload = {**base, "markdown_text": text, "thread_ts": result.header_ts}
         try:
             send_with_retry(send, payload, sleep)
             result.posted_replies += 1

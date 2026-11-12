@@ -50,3 +50,15 @@ sources:
     url: https://techblog.lycorp.co.jp/ko/feed/index.xml
   - name: 당근
     url: https://medium.com/feed/daangn
+  - name: Google Research
+    url: https://research.google/blog/rss/
+  - name: Google DeepMind
+    url: https://deepmind.google/blog/feed/basic/
+  - name: Microsoft Research
+    url: https://www.microsoft.com/en-us/research/feed/
+  - name: BAIR
+    url: https://bair.berkeley.edu/blog/feed.xml
+  - name: Apple ML Research
+    url: https://machinelearning.apple.com/rss.xml
+  - name: Allen AI
+    url: https://allenai.org/rss.xml
