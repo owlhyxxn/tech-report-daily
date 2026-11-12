@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import calendar
+import gzip
 import hashlib
 import html
 import json
@@ -21,6 +22,7 @@ SUMMARY_MAX_CHARS = 500
 TRACKING_PARAM_PREFIXES = ("utm_",)
 TRACKING_PARAM_KEYS = {"fbclid", "gclid"}
 DATA_FILE_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})\.jsonl$")
+GZIP_MAGIC = b"\x1f\x8b"
 
 Fetcher = Callable[[str, int], bytes]
 
@@ -202,10 +204,16 @@ def purge_old_files(data_dir: Path, today_kst: date, retention_days: int) -> lis
     return deleted
 
 
+def decompress_if_gzip(body: bytes) -> bytes:
+    if body[:2] == GZIP_MAGIC:
+        return gzip.decompress(body)
+    return body
+
+
 def http_fetch(url: str, timeout: int) -> bytes:
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return resp.read()
+        return decompress_if_gzip(resp.read())
 
 
 def run(

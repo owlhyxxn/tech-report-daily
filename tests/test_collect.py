@@ -1,3 +1,4 @@
+import gzip
 import json
 import tempfile
 import unittest
@@ -9,6 +10,7 @@ from collector.collect import (
     Settings,
     Source,
     clean_url,
+    decompress_if_gzip,
     is_recent,
     normalize_url,
     parse_feed,
@@ -121,6 +123,18 @@ class ParseTest(unittest.TestCase):
     def test_summary_truncated(self):
         r = parse_feed(rss([("t", "https://x.com/1", "a" * 900, RECENT)]), Source("S", "u"))[0]
         self.assertEqual(len(r["summary"]), 500)
+
+
+class GzipTest(unittest.TestCase):
+    def test_gzip_body_decompressed_and_parsed(self):
+        body = rss([("g", "https://x.com/g", "d", RECENT)])
+        packed = gzip.compress(body)
+        self.assertEqual(decompress_if_gzip(packed), body)
+        self.assertEqual(parse_feed(decompress_if_gzip(packed), Source("S", "u"))[0]["title"], "g")
+
+    def test_plain_body_unchanged(self):
+        body = rss([])
+        self.assertIs(decompress_if_gzip(body), body)
 
 
 class RecentTest(unittest.TestCase):
