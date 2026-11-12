@@ -50,6 +50,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout --orphan snapshot
           git rm -rfq --cached .
-          git add -A data
+          git add -A -f data
           git commit -m "data snapshot $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST') (+${NEW_COUNT} items, -${DELETED_COUNT} files)"
           git push --force origin HEAD:refs/heads/data
