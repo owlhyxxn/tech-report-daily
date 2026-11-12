@@ -218,6 +218,17 @@ class RunTest(unittest.TestCase):
         self.assertNotIn("last_error", status["S"])
         self.assertIn("last_error_at", status["S"])
 
+    def test_removed_source_dropped_from_status(self):
+        def fetch(url, timeout):
+            if url == "gone":
+                raise OSError("403")
+            return rss([])
+
+        run(Settings(), [Source("Gone", "gone"), Source("Kept", "kept")], self.data, NOW, fetch=fetch)
+        run(Settings(), [Source("Kept", "kept")], self.data, NOW + timedelta(hours=1), fetch=fetch)
+        status = json.loads((self.data / "status.json").read_text(encoding="utf-8"))
+        self.assertEqual(set(status), {"Kept"})
+
     def test_no_new_records_no_data_file(self):
         res = run(Settings(), [Source("S", "u")], self.data, NOW, fetch=lambda u, t: rss([]))
         self.assertEqual(res.new_records, [])

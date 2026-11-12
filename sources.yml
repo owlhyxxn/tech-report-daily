@@ -46,8 +46,6 @@ sources:
     url: https://tech.kakao.com/feed/
   - name: 토스
     url: https://toss.tech/rss.xml
-  - name: 우아한형제들
-    url: https://techblog.woowahan.com/feed/
   - name: LY Corp
     url: https://techblog.lycorp.co.jp/ko/feed/index.xml
   - name: 당근

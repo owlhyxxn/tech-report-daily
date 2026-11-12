@@ -218,7 +218,8 @@ def run(
     result = RunResult()
     today_kst = now.astimezone(KST).date()
     status_path = data_dir / "status.json"
-    status = load_status(status_path)
+    current_names = {s.name for s in sources}
+    status = {k: v for k, v in load_status(status_path).items() if k in current_names}
     seen = load_seen_ids(data_dir, today_kst, settings.dedupe_lookback_days)
     now_iso = to_iso_utc(now)
 
