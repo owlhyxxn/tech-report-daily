@@ -29,12 +29,12 @@ TZ=Asia/Seoul date -v-1d +%Y-%m-%d 2>/dev/null || TZ=Asia/Seoul date -d yesterda
 
 ## 3. 수집 데이터 읽기
 
-수집기는 GitHub 저장소 owlhyxxn/tech-report-daily 의 main 브랜치 data 폴더에 글을 쌓는다. Bash로 아래 파일을 받는다. 작업 디렉터리의 임시 폴더에 저장한다.
+수집기는 GitHub 저장소 owlhyxxn/tech-report-daily 의 data 브랜치(수집 전용, 항상 커밋 1개) data 폴더에 글을 쌓는다. Bash로 아래 파일을 받는다. 작업 디렉터리의 임시 폴더에 저장한다.
 
 ```
-https://raw.githubusercontent.com/owlhyxxn/tech-report-daily/main/data/{YESTERDAY}.jsonl
-https://raw.githubusercontent.com/owlhyxxn/tech-report-daily/main/data/{TODAY}.jsonl
-https://raw.githubusercontent.com/owlhyxxn/tech-report-daily/main/data/status.json
+https://raw.githubusercontent.com/owlhyxxn/tech-report-daily/data/data/{YESTERDAY}.jsonl
+https://raw.githubusercontent.com/owlhyxxn/tech-report-daily/data/data/{TODAY}.jsonl
+https://raw.githubusercontent.com/owlhyxxn/tech-report-daily/data/data/status.json
 ```
 
 - `curl -fsSL` 로 받는다. jsonl 파일 하나가 404면 그날 수집 글이 없는 것으로 보고 넘어간다.

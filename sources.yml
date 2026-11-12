@@ -1,7 +1,7 @@
 settings:
   max_age_hours: 48
   keep_undated: false
-  retention_days: 90
+  retention_days: 14
   dedupe_lookback_days: 7
   timeout_seconds: 20
 

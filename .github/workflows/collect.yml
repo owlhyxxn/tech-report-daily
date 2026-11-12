@@ -26,22 +26,30 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - id: collect
-        run: python -m collector.collect --sources sources.yml --data data
+      - id: prepare
+        run: |
+          if git ls-remote --exit-code --heads origin data > /dev/null; then
+            git fetch --depth=1 origin data
+            git worktree add --detach store FETCH_HEAD
+            echo "created=false" >> "$GITHUB_OUTPUT"
+          else
+            git worktree add --detach store
+            echo "created=true" >> "$GITHUB_OUTPUT"
+          fi
 
-      - if: steps.collect.outputs.new_count != '0' || steps.collect.outputs.deleted_count != '0'
+      - id: collect
+        run: python -m collector.collect --sources sources.yml --data store/data
+
+      - if: steps.collect.outputs.new_count != '0' || steps.collect.outputs.deleted_count != '0' || steps.prepare.outputs.created == 'true'
+        working-directory: store
         env:
           NEW_COUNT: ${{ steps.collect.outputs.new_count }}
           DELETED_COUNT: ${{ steps.collect.outputs.deleted_count }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data
-          git commit -m "data: +${NEW_COUNT} items, -${DELETED_COUNT} files ($(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST'))"
-          for attempt in 1 2 3; do
-            if git push; then
-              exit 0
-            fi
-            git pull --rebase
-          done
-          exit 1
+          git checkout --orphan snapshot
+          git rm -rfq --cached .
+          git add -A data
+          git commit -m "data snapshot $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST') (+${NEW_COUNT} items, -${DELETED_COUNT} files)"
+          git push --force origin HEAD:refs/heads/data
