@@ -1,0 +1,54 @@
+settings:
+  max_age_hours: 48
+  keep_undated: false
+  retention_days: 90
+  dedupe_lookback_days: 7
+  timeout_seconds: 20
+
+sources:
+  - name: GeekNews
+    url: https://news.hada.io/rss/news
+  - name: NAVER D2
+    url: https://d2.naver.com/d2.atom
+  - name: Hacker News
+    url: https://hnrss.org/frontpage?points=200
+  - name: The Verge
+    url: https://www.theverge.com/rss/index.xml
+  - name: Tom's Hardware
+    url: https://www.tomshardware.com/feeds/all
+  - name: Ars Technica
+    url: https://feeds.arstechnica.com/arstechnica/index
+  - name: OpenAI
+    url: https://openai.com/news/rss.xml
+  - name: Google AI
+    url: https://blog.google/technology/ai/rss/
+  - name: Hugging Face
+    url: https://huggingface.co/blog/feed.xml
+  - name: GitHub Blog
+    url: https://github.blog/feed/
+  - name: InfoQ
+    url: https://feed.infoq.com/
+  - name: Spring
+    url: https://spring.io/blog.atom
+  - name: Python Insider
+    url: https://blog.python.org/feeds/posts/default
+  - name: Chrome for Developers
+    url: https://developer.chrome.com/static/blog/feed.xml
+  - name: React
+    url: https://react.dev/rss.xml
+  - name: Kubernetes
+    url: https://kubernetes.io/feed.xml
+  - name: Cloudflare
+    url: https://blog.cloudflare.com/rss/
+  - name: The Hacker News
+    url: https://feeds.feedburner.com/TheHackersNews
+  - name: 카카오
+    url: https://tech.kakao.com/feed/
+  - name: 토스
+    url: https://toss.tech/rss.xml
+  - name: 우아한형제들
+    url: https://techblog.woowahan.com/feed/
+  - name: LY Corp
+    url: https://techblog.lycorp.co.jp/ko/feed/index.xml
+  - name: 당근
+    url: https://medium.com/feed/daangn
