@@ -1,0 +1,172 @@
+{
+  "Allen AI": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://allenai.org/rss.xml"
+  },
+  "Apple ML Research": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://machinelearning.apple.com/rss.xml"
+  },
+  "Ars Technica": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://feeds.arstechnica.com/arstechnica/index"
+  },
+  "BAIR": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://bair.berkeley.edu/blog/feed.xml"
+  },
+  "Chrome for Developers": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://developer.chrome.com/static/blog/feed.xml"
+  },
+  "Cloudflare": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://blog.cloudflare.com/rss/"
+  },
+  "GeekNews": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 9,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://news.hada.io/rss/news"
+  },
+  "GitHub Blog": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://github.blog/feed/"
+  },
+  "Google AI": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://blog.google/technology/ai/rss/"
+  },
+  "Google DeepMind": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_error_at": "2026-11-12T08:30:06Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://deepmind.google/blog/feed/basic/"
+  },
+  "Google Research": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://research.google/blog/rss/"
+  },
+  "Hacker News": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_error_at": "2026-11-12T08:30:06Z",
+    "last_new_count": 8,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://hnrss.org/frontpage?points=200"
+  },
+  "Hugging Face": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://huggingface.co/blog/feed.xml"
+  },
+  "InfoQ": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 3,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://feed.infoq.com/"
+  },
+  "Kubernetes": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://kubernetes.io/feed.xml"
+  },
+  "LY Corp": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://techblog.lycorp.co.jp/ko/feed/index.xml"
+  },
+  "Microsoft Research": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://www.microsoft.com/en-us/research/feed/"
+  },
+  "NAVER D2": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://d2.naver.com/d2.atom"
+  },
+  "OpenAI": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://openai.com/news/rss.xml"
+  },
+  "Python Insider": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://blog.python.org/feeds/posts/default"
+  },
+  "React": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://react.dev/rss.xml"
+  },
+  "Spring": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://spring.io/blog.atom"
+  },
+  "The Hacker News": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://feeds.feedburner.com/TheHackersNews"
+  },
+  "The Verge": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://www.theverge.com/rss/index.xml"
+  },
+  "Tom's Hardware": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 1,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://www.tomshardware.com/feeds/all"
+  },
+  "당근": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://medium.com/feed/daangn"
+  },
+  "카카오": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://tech.kakao.com/feed/"
+  },
+  "토스": {
+    "last_attempt_at": "2026-11-14T11:29:53Z",
+    "last_new_count": 0,
+    "last_success_at": "2026-11-14T11:29:53Z",
+    "url": "https://toss.tech/rss.xml"
+  }
+}
